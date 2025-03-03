@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iescelia.AnadirOrdenadorController">
+    <children>
+        <Label text="AÑADIR ORDENADOR" />
+        <Label text="Marca:" />
+        <TextField fx:id="txtMarca1" />
+        <Label text="Modelo:" />
+        <TextField fx:id="txtModelo1" />
+        <Label layoutX="45.0" layoutY="30.0" text="Ram:" />
+        <TextField fx:id="ram" />
+        <Label layoutX="45.0" layoutY="30.0" text="Procesador:" />
+        <TextField fx:id="procesador" layoutX="30.0" layoutY="186.0" />
+        <Label layoutX="91.0" layoutY="231.0" text="Tamaño de Disco" />
+        <TextField fx:id="tamDisco" layoutX="30.0" layoutY="350.0" />
+        <Label layoutX="59.0" layoutY="395.0" text="Tipo de Disco" />
+        <TextField fx:id="tipoDisco" layoutX="30.0" layoutY="432.0" />
+        <Button fx:id="secondaryButton" onAction="#guardar1" text="Guardar" />
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

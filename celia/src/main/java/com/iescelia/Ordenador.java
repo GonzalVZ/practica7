@@ -81,6 +81,7 @@ public class Ordenador extends Dispositivo {
     }
 
     public int load() {
+
         int a;
         boolean encontrado = false;
         if (tipo == 2) {
@@ -111,7 +112,10 @@ public class Ordenador extends Dispositivo {
             Impresora im = new Impresora(id);
             im.load();
         }
-        return 0;
+        if (encontrado)
+            return 0;
+        else
+            return 1;
     }
 
     private String leerCadenaFija(RandomAccessFile raf, int longitud) throws IOException {

@@ -78,8 +78,6 @@ public class Dispositivo {
             while (raf.getFilePointer() < raf.length() && !encontrado) {
                 long b = raf.getFilePointer();
                 a = raf.readInt();
-                System.out.println(
-                        "Estoy leyendo el registro con id = " + a + " y buscando el registro con id " + this.id);
 
                 if (a == id) {
                     marca = leerCadenaFija(raf, 20);
