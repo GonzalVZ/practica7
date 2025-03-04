@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iescelia.AnadirDispositivoController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iescelia.AnadirDispositivoController">
     <children>
         <Label text="AÑADIR DISP" />
       <Label text="Marca:" />
@@ -14,6 +14,8 @@
       <Label text="Modelo:" />
       <TextField fx:id="txtModelo" />
         <Button fx:id="secondaryButton" onAction="#guardar" text="Guardar" />
+      <TextField fx:id="idmodificar" />
+      <Button mnemonicParsing="false" onAction="#modifico" text="Modificar Dispositivo" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

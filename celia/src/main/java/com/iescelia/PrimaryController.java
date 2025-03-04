@@ -15,7 +15,7 @@ public class PrimaryController {
     TextArea salida;
 
     @FXML
-    TextField eliminar, txtid, busco;
+    TextField eliminar, txtid, busco, modificarDis;
 
     @FXML
     private void anadirDispositivo() throws IOException {
@@ -97,6 +97,24 @@ public class PrimaryController {
 
         }
 
+    }
+
+    public void botonModificar() throws IOException {
+        int id = Integer.parseInt(modificarDis.getText());
+        Dispositivo dis = new Dispositivo(id);
+        dis.load();
+
+        if (dis.getTipo() == 2) {
+            Ordenador o = new Ordenador(id);
+            o.load();
+            salida.appendText(o.toString() + "\n");
+        } else if (dis.getTipo() == 3) {
+            Impresora i = new Impresora(id);
+            i.load();
+            salida.appendText(i.toString() + "\n");
+        } else {
+            anadirDispositivo();
+        }
     }
 
 }
