@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class PrimaryController {
+
     @FXML
     TextArea salida;
 
@@ -30,10 +31,21 @@ public class PrimaryController {
         int id = 1, salir = 0;
         salida.setText(null);
         do {
-            Ordenador or = new Ordenador(id);
-            salir = or.load();
+            Dispositivo d = new Dispositivo(id);
+            salir = d.load();
             if (salir == 0) {
-                salida.appendText(or.toString() + "\n");
+                if (d.getTipo() == 2) { // El dispositivo es un ordenador
+                    Ordenador o = new Ordenador(id);
+                    o.load();
+                    salida.appendText(o.toString() + "\n");
+                } else if (d.getTipo() == 3) { // El dispositivo es una impresora
+                    Impresora i = new Impresora(id);
+                    i.load();
+                    salida.appendText(i.toString() + "\n");
+                } else { // El dispositivo es un dispositivo genérico (ya está cargado)
+                    salida.appendText(d.toString() + "\n");
+                }
+
             }
             id++;
         } while (salir == 0);
@@ -76,8 +88,11 @@ public class PrimaryController {
 
     public void eliminarTodo() throws IOException {
         File fichero = new File("Dispositivo.bin");
+        File fichero1 = new File("Ordenador.bin");
+
         try {
             fichero.delete();
+            fichero1.delete();
         } catch (Exception e) {
 
         }

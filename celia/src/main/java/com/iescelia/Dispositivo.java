@@ -231,8 +231,7 @@ public class Dispositivo {
     public String toString() {
         return "ID " + id + " Marca: " + marca + ". Modelo: " + modelo + ". Estado: "
                 + (estado ? "Funciona" : "No Funciona")
-                + ". Borrado: " + (borrado ? "Borrado" : "No Borrado") + "." + " Tipo: " + tipo + ". IdAjeno "
-                + idAjeno;
+                + ". Borrado: " + (borrado ? "Borrado" : "No Borrado") + ".";
     }
 
     public int getId() {

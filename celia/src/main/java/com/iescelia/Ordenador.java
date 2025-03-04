@@ -84,6 +84,7 @@ public class Ordenador extends Dispositivo {
 
         int a;
         boolean encontrado = false;
+
         if (tipo == 2) {
             try (RandomAccessFile raf = new RandomAccessFile("Ordenador.bin", "r")) {
                 while (raf.getFilePointer() < raf.length() && !encontrado) {
@@ -217,7 +218,7 @@ public class Ordenador extends Dispositivo {
                 tipoDiscoStr = " desconocido";
                 break;
         }
-        return super.toString() + " ID " + id + " Procesador: " + procesador + "." + " Memoria: " + ram + "GB."
+        return super.toString() + " Procesador: " + procesador + "." + " Memoria: " + ram + "GB."
                 + " Almacenamiento: "
                 + tamDisco + "GB" + tipoDiscoStr;
     }
